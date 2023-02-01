@@ -60,7 +60,7 @@ $title: hsl(212, 21%, 14%);
 .picture img {
     max-width: 100%;
     height: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0.625em 0.625em 0 0;
 
     @include desktop {
         margin: 0;
@@ -70,11 +70,11 @@ $title: hsl(212, 21%, 14%);
 }
 
 .container {
-    padding-left: 30px;
-    
+    padding-left: 1.875em;
     display: flex;
     flex-direction: column;
     background-color: $white;
+    border-radius: 0 0 0.625em 0.625em;
     
     @include desktop {
       height: fit-content;  
@@ -84,10 +84,10 @@ $title: hsl(212, 21%, 14%);
     &__perfume {
         color: $letter;
         text-transform: uppercase;
-        letter-spacing: 5px;
+        letter-spacing: 0.313em;
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
-        margin: 22px 0 15px 0;
+        margin: 0.938em 0 0.5em 0;
         font-size: 0.938em;
         
     }
@@ -96,15 +96,80 @@ $title: hsl(212, 21%, 14%);
         text-transform: capitalize;
         font-family: 'Fraunces', serif;
         font-weight: 700;
-        // font-size: 2.188em;
-        font-size: 2.375em;
-        margin: 15px 0 15px 0;
+        font-size: 2.188em;
+        margin: 0;
         
 
     }
     &__paraph {
         color: $letter;
         font-size: 0.875em;
-        
+        line-height: 1.75em;
+        overflow-wrap: break-word;
+        font-family: 'Montserrat', sans-serif;  
+        margin: 0.75em 0 0.75em 0;         
     }
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    
+
+    &__price {
+        color: $cyan;
+        font-family: 'Fraunces', serif;
+        font-size: 2.188em;
+        margin: 0.313em 0.938em 0.313em 0;
+        
+
+    }
+    &__oldPrice {
+        color: $letter;
+        font-family: 'Fraunces', serif;
+        font-weight: normal;
+        text-decoration: line-through;
+    
+    }
+}
+
+.btn {
+    background-color: $cyan;
+    color: $white;
+    font-family: 'Montserrat', sans-serif;  
+    padding: 0.938em;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    margin-right: 1.875em;
+    margin-bottom: 1.875em;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__cart {
+        margin-right: 0.635em;
+        font-size: 1.125em;
+    }
+    &__txt {
+        font-size: 1.125em;
+    }
+}
+
+.btn:hover {
+    background-color: #2D828F;
+}
+
+.attribution {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0.625em;
+    font-size: 0.875em;
+    text-align: center;
+    
+
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #2D828F;
 }
