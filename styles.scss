@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+/* variables */ 
+
+$cream: hsl(30, 38%, 92%);
+$cyan: hsl(158, 36%, 37%);
+$letter: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+$title: hsl(212, 21%, 14%);
+
+// font family
+// font-family: 'Creepster', cursive;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Fraunces', serif;
+
+
+
+//mixin
+@mixin desktop {
+    @media all and (min-width: 1440px) {
+        @content
+    }
+}
+
+
+
+.body {
+    background-color: $cream;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    @include desktop {
+        flex-direction: row;
+        // align-items: center;
+        justify-content: center;
+
+    }
+}
+.main {
+   display: flex; 
+   flex-direction: column;
+   max-width: 60rem;
+   
+  
+
+   @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60rem;
+    height: 50rem;        
+   }  
+}
+
+.picture img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+
+    @include desktop {
+        margin: 0;
+         
+    }
+    
+}
+
+.container {
+    padding-left: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    
+    @include desktop {
+      height: fit-content;  
+      margin-bottom: 0;  
+    }
+
+    &__perfume {
+        color: $letter;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        margin: 22px 0 15px 0;
+        font-size: 0.938em;
+        
+    }
+    &__title {
+        color: $title;
+        text-transform: capitalize;
+        font-family: 'Fraunces', serif;
+        font-weight: 700;
+        // font-size: 2.188em;
+        font-size: 2.375em;
+        margin: 15px 0 15px 0;
+        
+
+    }
+    &__paraph {
+        color: $letter;
+        font-size: 0.875em;
+        
+    }
+}
