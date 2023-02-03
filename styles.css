@@ -3,6 +3,10 @@
 }
 
 /* variables */
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Fraunces', serif; 
+*/
 .body {
   background-color: hsl(30deg, 38%, 92%);
   display: flex;
@@ -10,12 +14,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-@media all and (min-width: 1440px) {
-  .body {
-    flex-direction: row;
-    justify-content: center;
-  }
 }
 
 .main {
@@ -26,60 +24,82 @@
 @media all and (min-width: 1440px) {
   .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 60rem;
-    height: 50rem;
+    grid-template-columns: 21.875rem 21.875rem;
+    grid-template-rows: 1fr;
+    max-width: 40.62rem;
   }
 }
 
 .picture img {
   width: 100%;
   height: 100%;
-  border-radius: 0.625em 0.625em 0 0;
+  border-radius: 0.625rem 0.625rem 0 0;
 }
 @media all and (min-width: 1440px) {
   .picture img {
-    margin: 0;
+    object-fit: fill;
+    max-height: 85%;
+    border-radius: 0.625rem 0 0 0.625rem;
+    margin-top: 3.75rem;
   }
 }
 
 .container {
-  padding-left: 1.875em;
+  padding-left: 1.875rem;
   display: flex;
   flex-direction: column;
   background-color: hsl(0deg, 0%, 100%);
-  border-radius: 0 0 0.625em 0.625em;
+  border-radius: 0 0 0.625rem 0.625rem;
 }
 @media all and (min-width: 1440px) {
   .container {
-    height: fit-content;
-    margin-bottom: 0;
+    border-radius: 0 0.625rem 0.625rem 0;
+    max-height: 85%;
+    margin-top: 3.75rem;
   }
 }
 .container__perfume {
   color: hsl(228deg, 12%, 48%);
   text-transform: uppercase;
-  letter-spacing: 0.313em;
+  letter-spacing: 0.313rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  margin: 0.938em 0 0.5em 0;
-  font-size: 0.938em;
+  margin: 0.938rem 0 0.5rem 0;
+  font-size: 0.938rem;
+}
+@media all and (min-width: 1440px) {
+  .container__perfume {
+    margin: 1.875rem 0 1.875rem 0;
+  }
 }
 .container__title {
   color: hsl(212deg, 21%, 14%);
   text-transform: capitalize;
   font-family: "Fraunces", serif;
   font-weight: 700;
-  font-size: 2.188em;
+  font-size: 2.188rem;
   margin: 0;
+}
+@media all and (min-width: 1440px) {
+  .container__title {
+    font-size: 2.813rem;
+    margin-block-end: 1.25rem;
+    line-height: 95%;
+  }
 }
 .container__paraph {
   color: hsl(228deg, 12%, 48%);
-  font-size: 0.875em;
-  line-height: 1.75em;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
   overflow-wrap: break-word;
   font-family: "Montserrat", sans-serif;
-  margin: 0.75em 0 0.75em 0;
+  margin: 0.75rem 0 0.75rem 0;
+}
+@media all and (min-width: 1440px) {
+  .container__paraph {
+    margin-right: 5rem;
+    margin-bottom: 0.625rem;
+  }
 }
 
 .container2 {
@@ -91,8 +111,8 @@
 .container2__price {
   color: hsl(158deg, 36%, 37%);
   font-family: "Fraunces", serif;
-  font-size: 2.188em;
-  margin: 0.313em 0.938em 0.313em 0;
+  font-size: 2.188rem;
+  margin: 0.313rem 0.938rem 0.313rem 0;
 }
 .container2__oldPrice {
   color: hsl(228deg, 12%, 48%);
@@ -105,21 +125,26 @@
   background-color: hsl(158deg, 36%, 37%);
   color: hsl(0deg, 0%, 100%);
   font-family: "Montserrat", sans-serif;
-  padding: 0.938em;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-  margin-right: 1.875em;
-  margin-bottom: 1.875em;
+  padding: 0.938rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-right: 1.875rem;
+  margin-bottom: 1.875rem;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media all and (min-width: 1440px) {
+  .btn {
+    margin-top: 0.625rem;
+  }
+}
 .btn__cart {
-  margin-right: 0.635em;
-  font-size: 1.125em;
+  margin-right: 0.635rem;
+  font-size: 1.125rem;
 }
 .btn__txt {
-  font-size: 1.125em;
+  font-size: 1.125rem;
 }
 
 .btn:hover {
@@ -128,12 +153,14 @@
 
 .attribution {
   font-family: "Montserrat", sans-serif;
-  margin-top: 0.625em;
-  font-size: 0.875em;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
   text-align: center;
 }
 
-a:link, a:visited, a:active {
+a:link,
+a:visited,
+a:active {
   text-decoration: none;
   color: #2D828F;
 }

@@ -1,22 +1,17 @@
 * {
     box-sizing: border-box;
-    // overflow-y: hidden;
 }
 
-/* variables */ 
-
+/* variables */
 $cream: hsl(30, 38%, 92%);
 $cyan: hsl(158, 36%, 37%);
 $letter: hsl(228, 12%, 48%);
 $white: hsl(0, 0%, 100%);
 $title: hsl(212, 21%, 14%);
-
-// font family
-// font-family: 'Creepster', cursive;
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Fraunces', serif;
-
-
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Fraunces', serif; 
+*/
 
 //mixin
 @mixin desktop {
@@ -25,8 +20,6 @@ $title: hsl(212, 21%, 14%);
     }
 }
 
-
-
 .body {
     background-color: $cream;
     display: flex;
@@ -34,83 +27,90 @@ $title: hsl(212, 21%, 14%);
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
 
     @include desktop {
-        flex-direction: row;
-        // align-items: center;
-        justify-content: center;
-
+        display: grid;
+        grid-template-columns: 21.875rem 21.875rem;
+        grid-template-rows: 1fr;
+        max-width: 40.62rem;
     }
-}
-.main {
-   display: flex; 
-   flex-direction: column;
-   max-width: 60rem;
-   
-  
-
-   @include desktop {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 60rem;
-    height: 50rem;        
-   }  
 }
 
 .picture img {
-    // max-width: 100%;
     width: 100%;
-    // height: auto;
-    
     height: 100%;
-    border-radius: 0.625em 0.625em 0 0;
+    border-radius: 0.625rem 0.625rem 0 0;
 
     @include desktop {
-        margin: 0;
-         
+        object-fit: fill;
+        max-height: 85%;
+        border-radius: 0.625rem 0 0 0.625rem;
+        margin-top: 3.75rem;
     }
-    
+
 }
 
 .container {
-    padding-left: 1.875em;
+    padding-left: 1.875rem;
     display: flex;
     flex-direction: column;
     background-color: $white;
-    border-radius: 0 0 0.625em 0.625em;
-    
+    border-radius: 0 0 0.625rem 0.625rem;
+
     @include desktop {
-      height: fit-content;  
-      margin-bottom: 0;  
+        border-radius: 0 0.625rem 0.625rem 0;
+        max-height: 85%;
+        margin-top: 3.75rem;
     }
 
     &__perfume {
         color: $letter;
         text-transform: uppercase;
-        letter-spacing: 0.313em;
+        letter-spacing: 0.313rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
-        margin: 0.938em 0 0.5em 0;
-        font-size: 0.938em;
-        
+        margin: 0.938rem 0 0.5rem 0;
+        font-size: 0.938rem;
+
+        @include desktop {
+            margin: 1.875rem 0 1.875rem 0;
+        }
+
     }
+
     &__title {
         color: $title;
         text-transform: capitalize;
         font-family: 'Fraunces', serif;
         font-weight: 700;
-        font-size: 2.188em;
+        font-size: 2.188rem;
         margin: 0;
-        
 
+        @include desktop {
+            font-size: 2.813rem;
+            margin-block-end: 1.25rem;
+            line-height: 95%;
+        }
     }
+
     &__paraph {
         color: $letter;
-        font-size: 0.875em;
-        line-height: 1.75em;
+        font-size: 0.875rem;
+        line-height: 1.75rem;
         overflow-wrap: break-word;
-        font-family: 'Montserrat', sans-serif;  
-        margin: 0.75em 0 0.75em 0;         
+        font-family: 'Montserrat', sans-serif;
+        margin: 0.75rem 0 0.75rem 0;
+
+        @include desktop {
+            margin-right: 5rem;
+            margin-bottom: 0.625rem;
+        }
     }
 }
 
@@ -119,44 +119,48 @@ $title: hsl(212, 21%, 14%);
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: center;
-    
+
 
     &__price {
         color: $cyan;
         font-family: 'Fraunces', serif;
-        font-size: 2.188em;
-        margin: 0.313em 0.938em 0.313em 0;
-        
+        font-size: 2.188rem;
+        margin: 0.313rem 0.938rem 0.313rem 0;
 
     }
+
     &__oldPrice {
         color: $letter;
         font-family: 'Fraunces', serif;
         font-weight: normal;
         text-decoration: line-through;
-    
     }
 }
 
 .btn {
     background-color: $cyan;
     color: $white;
-    font-family: 'Montserrat', sans-serif;  
-    padding: 0.938em;
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    margin-right: 1.875em;
-    margin-bottom: 1.875em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.938rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-right: 1.875rem;
+    margin-bottom: 1.875rem;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &__cart {
-        margin-right: 0.635em;
-        font-size: 1.125em;
+    @include desktop {
+        margin-top: 0.625rem;
     }
+
+    &__cart {
+        margin-right: 0.635rem;
+        font-size: 1.125rem;
+    }
+
     &__txt {
-        font-size: 1.125em;
+        font-size: 1.125rem;
     }
 }
 
@@ -166,13 +170,14 @@ $title: hsl(212, 21%, 14%);
 
 .attribution {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 0.625em;
-    font-size: 0.875em;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
     text-align: center;
-    
-
 }
-a:link, a:visited, a:active {
-    text-decoration:none;
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
     color: #2D828F;
 }
